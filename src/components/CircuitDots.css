@@ -1,0 +1,81 @@
+.circuit-dots {
+  --circuit-path-color: color-mix(in srgb, var(--color-circuit) 82%, transparent);
+  --dot-color: var(--color-primary);
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.circuit-dots-dark {
+  --circuit-path-color: color-mix(in srgb, var(--color-border) 45%, transparent);
+  --dot-color: color-mix(in srgb, var(--color-primary) 58%, var(--color-white));
+}
+
+.circuit-path {
+  --path-length: min(38vw, 500px);
+  --dot-x: calc(var(--path-length) - 8px);
+  position: absolute;
+  display: block;
+  height: 1px;
+  width: var(--path-length);
+  background: var(--circuit-path-color);
+}
+
+.circuit-path i {
+  top: -4px;
+  left: 0;
+}
+
+.circuit-path-one {
+  top: 19%;
+  left: 3%;
+}
+
+.circuit-path-two {
+  top: 56%;
+  right: 3%;
+  --dot-duration: var(--dot-speed-vertical);
+  --dot-delay: -1.1s;
+}
+
+.circuit-path-three {
+  bottom: 12%;
+  left: 22%;
+  --path-length: min(27vw, 350px);
+  --dot-duration: var(--dot-speed-long);
+  --dot-delay: -1.9s;
+}
+
+.circuit-path-four {
+  top: 8%;
+  right: 13%;
+  --path-length: 170px;
+  --dot-x: 0px;
+  --dot-y: calc(var(--path-length) - 8px);
+  --dot-duration: var(--dot-speed-vertical);
+  --dot-delay: -1.5s;
+  width: 1px;
+  height: var(--path-length);
+}
+
+.circuit-path-four i {
+  top: 0;
+  left: -4px;
+}
+
+@media (max-width: 650px) {
+  .circuit-path {
+    --path-length: 45vw;
+  }
+
+  .circuit-path-three {
+    --path-length: 33vw;
+  }
+
+  .circuit-path-four {
+    --path-length: 120px;
+    width: 1px;
+  }
+}

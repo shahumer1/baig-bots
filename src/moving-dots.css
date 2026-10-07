@@ -1,0 +1,22 @@
+/* Shared dot motion for hero, parallax, and the later sections. */
+.moving-dot {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--dot-color, var(--color-primary));
+  box-shadow:
+    0 0 7px color-mix(in srgb, var(--dot-color, var(--color-primary)) 80%, transparent),
+    0 0 16px color-mix(in srgb, var(--dot-color, var(--color-primary)) 30%, transparent);
+  animation: movingDot var(--dot-duration, var(--dot-speed-horizontal)) linear var(--dot-delay, 0s) infinite;
+}
+
+@keyframes movingDot {
+  0% { transform: translate(0, 0); opacity: 0; }
+  15% { opacity: 1; }
+  85% { opacity: 1; }
+  100% {
+    transform: translate(var(--dot-x, 0px), var(--dot-y, 0px));
+    opacity: 0;
+  }
+}

@@ -93,9 +93,9 @@ function HeroParallax() {
             <span className="hp-line hp-line-3"></span>
             <span className="hp-line hp-line-4"></span>
 
-            <span className="hp-dot hp-dot-1"></span>
-            <span className="hp-dot hp-dot-2"></span>
-            <span className="hp-dot hp-dot-3"></span>
+            <span className="moving-dot hp-dot-1"></span>
+            <span className="moving-dot hp-dot-2"></span>
+            <span className="moving-dot hp-dot-3"></span>
 
             {/* right side */}
             <span className="hp-line hp-line-5"></span>
@@ -103,9 +103,9 @@ function HeroParallax() {
             <span className="hp-line hp-line-7"></span>
             <span className="hp-line hp-line-8"></span>
 
-            <span className="hp-dot hp-dot-4"></span>
-            <span className="hp-dot hp-dot-5"></span>
-            <span className="hp-dot hp-dot-6"></span>
+            <span className="moving-dot hp-dot-4"></span>
+            <span className="moving-dot hp-dot-5"></span>
+            <span className="moving-dot hp-dot-6"></span>
           </div>
         </div>
 

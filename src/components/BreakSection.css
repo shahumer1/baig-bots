@@ -1,0 +1,88 @@
+.break-section {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  padding: 185px 6% 170px;
+  background: var(--color-navbar);
+  color: var(--color-white);
+}
+
+/* Uneven white edge suggests the page opening to reveal the dark layer. */
+.break-section::before {
+  content: "";
+  position: absolute;
+  z-index: 0;
+  inset: -1px 0 auto;
+  height: 110px;
+  background: var(--color-background);
+  clip-path: polygon(0 0, 100% 0, 100% 40%, 70% 40%, 62% 92%, 49% 46%, 37% 78%, 27% 40%, 0 40%);
+}
+
+/* The white page returns below the dark break. */
+.break-section::after {
+  content: "";
+  position: absolute;
+  z-index: 0;
+  inset: auto 0 -1px;
+  height: 115px;
+  background: var(--color-background);
+  clip-path: polygon(0 100%, 100% 100%, 100% 18%, 69% 78%, 52% 45%, 33% 85%, 0 22%);
+}
+
+.break-section-inner {
+  position: relative;
+  z-index: 1;
+  width: min(100%, 1250px);
+  margin: 0 auto;
+}
+
+.break-eyebrow {
+  display: block;
+  margin-bottom: 22px;
+  color: var(--color-border);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 4px;
+}
+
+.break-section h2 {
+  max-width: 940px;
+  margin: 0 0 24px;
+  font-size: clamp(48px, 6vw, 88px);
+  line-height: 1.02;
+  letter-spacing: -0.045em;
+}
+
+.break-section h2 span {
+  color: color-mix(in srgb, var(--color-primary-hover) 62%, var(--color-white));
+}
+
+.break-section p {
+  max-width: 570px;
+  margin: 0;
+  color: color-mix(in srgb, var(--color-white) 80%, transparent);
+  font-size: 18px;
+  line-height: 1.65;
+}
+
+@media (max-width: 650px) {
+  .break-section {
+    padding: 155px 18px 145px;
+  }
+
+  .break-section::before {
+    height: 75px;
+  }
+
+  .break-section::after {
+    height: 75px;
+  }
+
+  .break-section h2 {
+    font-size: clamp(42px, 10vw, 58px);
+  }
+
+  .break-section p {
+    font-size: 16px;
+  }
+}

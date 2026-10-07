@@ -1,0 +1,33 @@
+/* Site-wide design settings: change this file to update the palette or font. */
+:root {
+  --font-family-base: Arial, Helvetica, sans-serif;
+
+  /* Main palette */
+  --color-white: #ffffff;
+  --color-background: #ffffff;
+  --color-background-alternate: #f3f3f3;
+  --color-navbar: #191919;
+  --color-footer: #1d2223;
+  --color-primary: #701018;
+  --color-primary-hover: #803033;
+  --color-text: #191919;
+  --color-border: #cecccc;
+
+  /* Original hero/parallax dot timing */
+  --dot-speed-horizontal: 5s;
+  --dot-speed-vertical: 4.5s;
+  --dot-speed-long: 5.5s;
+
+  /* Supporting colors derived from the palette above */
+  --color-muted-text: color-mix(in srgb, var(--color-text) 64%, var(--color-white));
+  --color-surface-translucent: color-mix(in srgb, var(--color-white) 92%, transparent);
+  --color-white-shine: color-mix(in srgb, var(--color-white) 35%, transparent);
+  --color-menu-hover: color-mix(in srgb, var(--color-white) 8%, transparent);
+  --color-grid: color-mix(in srgb, var(--color-border) 52%, transparent);
+  --color-circuit: var(--color-border);
+  --color-shadow-light: rgb(0 0 0 / 0.055);
+  --color-shadow-soft: rgb(0 0 0 / 0.07);
+  --color-shadow-card: rgb(0 0 0 / 0.09);
+  --color-shadow-nav: rgb(0 0 0 / 0.18);
+  --color-shadow-menu: rgb(0 0 0 / 0.2);
+}

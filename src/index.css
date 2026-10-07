@@ -1,3 +1,6 @@
+@import "./theme.css";
+@import "./moving-dots.css";
+
 * {
   margin: 0;
   padding: 0;
@@ -22,14 +25,11 @@ body {
 
   overflow-x: hidden;
 
-  font-family:
-    Arial,
-    Helvetica,
-    sans-serif;
+  font-family: var(--font-family-base);
 
-  background: #ffffff;
+  background: var(--color-background);
 
-  color: #111111;
+  color: var(--color-text);
 }
 
 

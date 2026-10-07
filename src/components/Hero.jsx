@@ -1,5 +1,7 @@
 import "./Hero.css";
 import HeroParallax from "./HeroParallax";
+import ArrowUpRight from "./ArrowUpRight";
+import heroImage from "../assets/H1.png";
 
 function Hero() {
   return (
@@ -14,18 +16,26 @@ function Hero() {
             <span className="hero-line hero-line-3"></span>
             <span className="hero-line hero-line-4"></span>
 
-            <span className="hero-dot hero-dot-1"></span>
-            <span className="hero-dot hero-dot-2"></span>
-            <span className="hero-dot hero-dot-3"></span>
+            <span className="moving-dot hero-dot-1"></span>
+            <span className="moving-dot hero-dot-2"></span>
+            <span className="moving-dot hero-dot-3"></span>
           </div>
         </div>
 
-        <div className="hero-content">
+        <div className="hero-inner">
           <h1 className="hero-title hero-enter hero-delay-1">
             Where Ideas
             <br />
             Come to <span>Life</span>
           </h1>
+
+          <div className="hero-visual hero-enter hero-delay-2">
+            <img
+              src={heroImage}
+              alt="Red steps leading upward to an arrow"
+              fetchPriority="high"
+            />
+          </div>
 
           <p className="hero-description hero-enter hero-delay-2">
             Baigbots.com is the dedicated demo platform for{" "}
@@ -35,7 +45,8 @@ function Hero() {
 
           <div className="hero-buttons hero-enter hero-delay-3">
             <a href="#contact" className="hero-btn-primary">
-              Contact Us ↗
+              <span>Contact Us</span>
+              <ArrowUpRight className="button-arrow" />
             </a>
 
             <a
@@ -44,7 +55,8 @@ function Hero() {
               rel="noreferrer"
               className="hero-btn-secondary"
             >
-              Visit InovioCloud ↗
+              <span>Visit InovioCloud</span>
+              <ArrowUpRight className="button-arrow" />
             </a>
           </div>
 
