@@ -1,0 +1,633 @@
+/* ==================================================
+   MAIN HERO
+================================================== */
+
+.hero {
+  position: relative;
+
+  width: 100%;
+  min-height: 100vh;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 135px 20px 70px;
+
+  overflow: hidden;
+
+  background: #ffffff;
+}
+
+
+/* ==================================================
+   BACKGROUND
+================================================== */
+
+.hero-background {
+  position: absolute;
+
+  inset: 0;
+
+  z-index: 0;
+
+  pointer-events: none;
+}
+
+
+/* GRID */
+
+.hero-grid {
+  position: absolute;
+
+  inset: 0;
+
+  background-image:
+    linear-gradient(
+      rgba(90, 95, 105, 0.065) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      rgba(90, 95, 105, 0.065) 1px,
+      transparent 1px
+    );
+
+  background-size: 52px 52px;
+}
+
+
+/* LEFT CIRCUITS */
+
+.hero-circuits {
+  position: absolute;
+
+  inset: 0;
+}
+
+.hero-line {
+  position: absolute;
+
+  background: rgba(100, 105, 115, 0.3);
+}
+
+
+/* upper horizontal */
+
+.hero-line-1 {
+  left: 4%;
+  top: 30%;
+
+  width: 240px;
+  height: 1px;
+}
+
+
+/* upper vertical */
+
+.hero-line-2 {
+  left: 4%;
+  top: 30%;
+
+  width: 1px;
+  height: 130px;
+}
+
+
+/* lower horizontal */
+
+.hero-line-3 {
+  left: 8%;
+  top: 60%;
+
+  width: 220px;
+  height: 1px;
+}
+
+
+/* lower vertical */
+
+.hero-line-4 {
+  left: calc(8% + 220px);
+  top: 60%;
+
+  width: 1px;
+  height: 130px;
+}
+
+
+/* DOTS */
+
+.hero-dot {
+  position: absolute;
+
+  width: 8px;
+  height: 8px;
+
+  border-radius: 50%;
+
+  background: #bd1616;
+
+  box-shadow:
+    0 0 7px rgba(189, 22, 22, 0.8),
+    0 0 16px rgba(189, 22, 22, 0.3);
+}
+
+
+.hero-dot-1 {
+  left: 4%;
+  top: calc(30% - 4px);
+
+  animation: heroDotHorizontal1 5s linear infinite;
+}
+
+
+.hero-dot-2 {
+  left: calc(4% - 4px);
+  top: 30%;
+
+  animation: heroDotVertical 4.5s linear infinite;
+}
+
+
+.hero-dot-3 {
+  left: 8%;
+  top: calc(60% - 4px);
+
+  animation: heroDotHorizontal2 5.5s linear infinite;
+}
+
+
+@keyframes heroDotHorizontal1 {
+  0% {
+    transform: translateX(0);
+    opacity: 0;
+  }
+
+  15% {
+    opacity: 1;
+  }
+
+  85% {
+    opacity: 1;
+  }
+
+  100% {
+    transform: translateX(240px);
+    opacity: 0;
+  }
+}
+
+
+@keyframes heroDotHorizontal2 {
+  0% {
+    transform: translateX(0);
+    opacity: 0;
+  }
+
+  15% {
+    opacity: 1;
+  }
+
+  85% {
+    opacity: 1;
+  }
+
+  100% {
+    transform: translateX(220px);
+    opacity: 0;
+  }
+}
+
+
+@keyframes heroDotVertical {
+  0% {
+    transform: translateY(0);
+    opacity: 0;
+  }
+
+  15% {
+    opacity: 1;
+  }
+
+  85% {
+    opacity: 1;
+  }
+
+  100% {
+    transform: translateY(130px);
+    opacity: 0;
+  }
+}
+
+
+/* ==================================================
+   CONTENT
+================================================== */
+
+.hero-content {
+  position: relative;
+
+  z-index: 2;
+
+  width: 100%;
+  max-width: 760px;
+
+  text-align: center;
+}
+
+
+/* LOAD ANIMATION */
+
+.hero-enter {
+  opacity: 0;
+
+  transform: translateY(45px);
+
+  animation: heroEnter 0.9s ease forwards;
+}
+
+
+.hero-delay-1 {
+  animation-delay: 0.1s;
+}
+
+.hero-delay-2 {
+  animation-delay: 0.3s;
+}
+
+.hero-delay-3 {
+  animation-delay: 0.5s;
+}
+
+.hero-delay-4 {
+  animation-delay: 0.7s;
+}
+
+
+@keyframes heroEnter {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+/* ==================================================
+   TITLE
+================================================== */
+
+.hero-title {
+  margin: 0 0 27px;
+
+  font-size: clamp(64px, 7vw, 105px);
+
+  line-height: 0.92;
+
+  letter-spacing: -4px;
+
+  font-weight: 800;
+
+  color: #0d0d0d;
+
+  transition: transform 0.35s ease;
+}
+
+
+.hero-title:hover {
+  transform: scale(1.012);
+}
+
+
+.hero-title span {
+  display: inline-block;
+
+  color: #bb1717;
+
+  transition:
+    transform 0.3s ease,
+    text-shadow 0.3s ease;
+}
+
+
+.hero-title span:hover {
+  transform: translateY(-5px);
+
+  text-shadow:
+    0 10px 24px rgba(187, 23, 23, 0.18);
+}
+
+
+/* ==================================================
+   DESCRIPTION
+================================================== */
+
+.hero-description {
+  max-width: 680px;
+
+  margin: 0 auto 33px;
+
+  color: #686d76;
+
+  font-size: 19px;
+
+  line-height: 1.65;
+}
+
+
+.hero-description strong {
+  color: #b51616;
+
+  font-weight: 700;
+}
+
+
+/* ==================================================
+   BUTTONS
+================================================== */
+
+.hero-buttons {
+  display: flex;
+
+  justify-content: center;
+  align-items: center;
+
+  gap: 14px;
+
+  flex-wrap: wrap;
+
+  margin-bottom: 54px;
+}
+
+
+.hero-btn-primary,
+.hero-btn-secondary {
+  position: relative;
+
+  min-width: 168px;
+
+  padding: 15px 24px;
+
+  border-radius: 11px;
+
+  text-decoration: none;
+
+  font-size: 14px;
+  font-weight: 700;
+
+  overflow: hidden;
+
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease,
+    border-color 0.3s ease,
+    color 0.3s ease;
+}
+
+
+/* PRIMARY */
+
+.hero-btn-primary {
+  color: #ffffff;
+
+  background: #b51616;
+
+  border: 1px solid #b51616;
+
+  box-shadow:
+    0 9px 24px rgba(181, 22, 22, 0.18);
+}
+
+
+.hero-btn-primary::before {
+  content: "";
+
+  position: absolute;
+
+  top: 0;
+  left: -110%;
+
+  width: 100%;
+  height: 100%;
+
+  background: linear-gradient(
+    115deg,
+    transparent,
+    rgba(255, 255, 255, 0.35),
+    transparent
+  );
+
+  transition: left 0.55s ease;
+}
+
+
+.hero-btn-primary:hover::before {
+  left: 110%;
+}
+
+
+.hero-btn-primary:hover {
+  transform: translateY(-4px);
+
+  box-shadow:
+    0 14px 30px rgba(181, 22, 22, 0.27);
+}
+
+
+/* SECONDARY */
+
+.hero-btn-secondary {
+  color: #202020;
+
+  background: rgba(255, 255, 255, 0.92);
+
+  border: 1px solid #d5d8de;
+}
+
+
+.hero-btn-secondary:hover {
+  color: #b51616;
+
+  border-color: #b51616;
+
+  transform: translateY(-4px);
+
+  box-shadow:
+    0 10px 22px rgba(0, 0, 0, 0.07);
+}
+
+
+/* ==================================================
+   STATS
+================================================== */
+
+.hero-stats {
+  display: flex;
+
+  justify-content: center;
+  align-items: center;
+
+  gap: 26px;
+}
+
+
+.hero-stat {
+  position: relative;
+
+  min-width: 140px;
+
+  padding: 0 22px;
+
+  transition: transform 0.3s ease;
+}
+
+
+.hero-stat:hover {
+  transform: translateY(-6px);
+}
+
+
+.hero-stat:not(:last-child)::after {
+  content: "";
+
+  position: absolute;
+
+  top: 6px;
+  right: -13px;
+
+  width: 1px;
+  height: 50px;
+
+  background: #dedede;
+}
+
+
+.hero-stat h2 {
+  margin: 0 0 5px;
+
+  color: #111111;
+
+  font-size: 47px;
+
+  font-weight: 800;
+
+  transition:
+    color 0.3s ease,
+    transform 0.3s ease;
+}
+
+
+.hero-stat:hover h2 {
+  color: #b51616;
+
+  transform: scale(1.06);
+}
+
+
+.hero-stat p {
+  margin: 0;
+
+  color: #858a94;
+
+  font-size: 13px;
+}
+
+
+/* ==================================================
+   TABLET
+================================================== */
+
+@media (max-width: 900px) {
+
+  .hero {
+    min-height: auto;
+
+    padding:
+      125px
+      24px
+      65px;
+  }
+
+  .hero-title {
+    font-size:
+      clamp(
+        55px,
+        10vw,
+        80px
+      );
+  }
+
+  .hero-description {
+    font-size: 17px;
+  }
+
+}
+
+
+/* ==================================================
+   MOBILE
+================================================== */
+
+@media (max-width: 600px) {
+
+  .hero {
+    padding:
+      115px
+      18px
+      50px;
+  }
+
+  .hero-title {
+    font-size: 48px;
+
+    letter-spacing: -2px;
+
+    line-height: 0.98;
+  }
+
+  .hero-description {
+    font-size: 15px;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+
+    width: 100%;
+  }
+
+  .hero-btn-primary,
+  .hero-btn-secondary {
+    width: 100%;
+  }
+
+  .hero-stats {
+    gap: 5px;
+
+    justify-content: space-between;
+  }
+
+  .hero-stat {
+    min-width: unset;
+
+    width: 33.333%;
+
+    padding: 0 5px;
+  }
+
+  .hero-stat h2 {
+    font-size: 34px;
+  }
+
+  .hero-stat p {
+    font-size: 10px;
+  }
+
+  .hero-stat:not(:last-child)::after {
+    display: none;
+  }
+
+  .hero-circuits {
+    opacity: 0.4;
+  }
+
+}
