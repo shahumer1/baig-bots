@@ -3,7 +3,7 @@ import "./Brand.css";
 
 function Brand({ variant = "nav" }) {
   return (
-    <a className={`brand-lockup brand-lockup--${variant}`} href="#home" aria-label="Baig Bots, back to top">
+    <a className={`brand-lockup brand-lockup--${variant}`} href="?page=home" aria-label="Baig Bots, back to top">
       <img src={logo} alt="" />
       <span>
         Baig Bots{variant === "footer" && <span className="brand-dot">.</span>}

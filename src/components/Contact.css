@@ -25,7 +25,7 @@
   margin-bottom: 22px;
 }
 
-.contact-intro h2 {
+.contact-intro :is(h1, h2) {
   max-width: 550px;
   margin: 0 0 24px;
   font-size: clamp(44px, 5vw, 72px);
@@ -178,7 +178,7 @@
     gap: 50px;
   }
 
-  .contact-intro h2 {
+  .contact-intro :is(h1, h2) {
     max-width: 720px;
   }
 
@@ -193,7 +193,7 @@
     padding: 85px 18px 95px;
   }
 
-  .contact-intro h2 {
+  .contact-intro :is(h1, h2) {
     font-size: clamp(42px, 10vw, 58px);
   }
 

@@ -1,8 +1,8 @@
 import "./Hero.css";
-import HeroParallax from "./HeroParallax";
+import TechnologySlider from "./TechnologySlider";
 import ArrowUpRight from "./ArrowUpRight";
 import GraphBackground from "./GraphBackground";
-import heroImage from "../assets/H1.png";
+import AutomationDiagram from "./AutomationDiagram";
 
 function Hero() {
   return (
@@ -31,56 +31,47 @@ function Hero() {
           </h1>
 
           <div className="hero-visual hero-enter hero-delay-2">
-            <img
-              src={heroImage}
-              alt="Red steps leading upward to an arrow"
-              fetchPriority="high"
-            />
+            <AutomationDiagram />
           </div>
 
           <p className="hero-description hero-enter hero-delay-2">
-            Baigbots.com is the dedicated demo platform for{" "}
-            <strong>InovioCloud</strong> projects. Each subdomain hosts a
-            unique client showcase, bringing concepts to reality.
+            One connected team for <strong>AI solutions</strong>, websites,
+            design, cloud hosting, and digital growth. We shape useful
+            experiences around the people and goals that matter to your business.
           </p>
 
           <div className="hero-buttons hero-enter hero-delay-3">
-            <a href="#contact" className="hero-btn-primary">
+            <a href="?page=contact" className="hero-btn-primary">
               <span>Contact Us</span>
               <ArrowUpRight className="button-arrow" />
             </a>
 
-            <a
-              href="https://inoviocloud.com"
-              target="_blank"
-              rel="noreferrer"
-              className="hero-btn-secondary"
-            >
-              <span>Visit InovioCloud</span>
+            <a href="?page=services" className="hero-btn-secondary">
+              <span>Explore Services</span>
               <ArrowUpRight className="button-arrow" />
             </a>
           </div>
 
           <div className="hero-stats hero-enter hero-delay-4">
             <div className="hero-stat">
-              <h2>15+</h2>
-              <p>Active Demos</p>
+              <h2>AI</h2>
+              <p>Intelligent Tools</p>
             </div>
 
             <div className="hero-stat">
-              <h2>30+</h2>
-              <p>Happy Clients</p>
+              <h2>Web</h2>
+              <p>Digital Experiences</p>
             </div>
 
             <div className="hero-stat">
-              <h2>∞</h2>
-              <p>Possibilities</p>
+              <h2>Brand</h2>
+              <p>Creative Growth</p>
             </div>
           </div>
         </div>
       </section>
 
-      <HeroParallax />
+      <TechnologySlider />
     </>
   );
 }

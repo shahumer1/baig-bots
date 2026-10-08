@@ -4,37 +4,13 @@ import CircuitDots from "./CircuitDots";
 import GraphBackground from "./GraphBackground";
 import SectionEyebrow from "./SectionEyebrow";
 import SiteContainer from "./SiteContainer";
+import { homeServices } from "../content/siteContent";
 import "./Services.css";
 
 function Services() {
   const [flippedCard, setFlippedCard] = useState(null);
 
-  const services = [
-    {
-      number: "01",
-      title: "Software Development",
-      text: "Custom websites, web apps and digital platforms built around your business needs.",
-      icon: "</>",
-      details: "From the first idea to launch, we build practical digital products around the way your business works.",
-      highlights: ["Websites", "Web apps", "Digital platforms"],
-    },
-    {
-      number: "02",
-      title: "Automation Solutions",
-      text: "Smart automation systems that reduce repetitive work and improve efficiency.",
-      icon: "⚙",
-      details: "We connect your tools and streamline everyday processes so your team can focus on higher-value work.",
-      highlights: ["Workflow design", "System integrations", "Less manual work"],
-    },
-    {
-      number: "03",
-      title: "AI Solutions",
-      text: "AI-powered tools, assistants and intelligent workflows designed to help businesses scale.",
-      icon: "AI",
-      details: "We turn useful AI ideas into assistants and workflows that support real business goals.",
-      highlights: ["AI assistants", "Smart tools", "Scalable workflows"],
-    },
-  ];
+
 
   return (
     <section className="services-section" id="services">
@@ -52,14 +28,14 @@ function Services() {
           </h2>
 
           <p>
-            From custom software to intelligent automation, we create
-            solutions designed to make your business faster, smarter and
-            easier to scale.
+            Explore joined-up support across websites, AI, design, and
+            growth. Every solution starts with your audience and a clear
+            business goal.
           </p>
         </div>
 
         <div className="services-grid">
-          {services.map((service) => {
+          {homeServices.map((service) => {
             const isFlipped = flippedCard === service.number;
 
             return (

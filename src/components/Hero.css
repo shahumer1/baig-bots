@@ -153,16 +153,6 @@
   justify-content: center;
 }
 
-.hero-visual img {
-  display: block;
-  width: 118%;
-  max-width: none;
-  height: auto;
-  margin-left: -10%;
-  object-fit: contain;
-}
-
-
 /* LOAD ANIMATION */
 
 .hero-enter {
@@ -515,11 +505,6 @@
   .hero-visual {
     width: min(100%, 490px);
     margin: 0 auto 12px;
-  }
-
-  .hero-visual img {
-    width: 100%;
-    margin-left: 0;
   }
 
   .hero-description {

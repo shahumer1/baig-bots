@@ -1,0 +1,343 @@
+.automation-diagram {
+  position: relative;
+  width: min(100%, 600px);
+  aspect-ratio: 15 / 13;
+  isolation: isolate;
+  flex: none;
+}
+
+.automation-halo {
+  position: absolute;
+  inset: 17% 20%;
+  z-index: -1;
+  border: 1px solid color-mix(in srgb, var(--color-primary) 13%, transparent);
+  border-radius: 50%;
+  background: radial-gradient(
+    circle,
+    color-mix(in srgb, var(--color-primary) 7%, transparent),
+    transparent 68%
+  );
+  animation: automationBreathe 6s ease-in-out infinite;
+}
+
+.automation-connections {
+  position: absolute;
+  z-index: 2;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+  pointer-events: none;
+}
+
+.automation-wire {
+  fill: none;
+  stroke: var(--color-border);
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 2;
+}
+
+.automation-packet {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.automation-packet-glow {
+  fill: color-mix(in srgb, var(--color-accent) 30%, transparent);
+}
+
+.automation-packet-core {
+  fill: var(--color-accent);
+  stroke: var(--color-white);
+  stroke-width: 2;
+  filter: drop-shadow(0 0 8px var(--color-accent));
+}
+
+.automation-stack {
+  position: absolute;
+  z-index: 1;
+  width: 38%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.automation-stack--ai { left: 0; top: 0; }
+.automation-stack--web { right: 0; top: 0; }
+.automation-stack--cloud { left: 0; bottom: 0; }
+.automation-stack--growth { right: 0; bottom: 0; }
+
+.automation-satellites {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-evenly;
+  height: 50px;
+}
+
+.automation-stack--cloud .automation-satellites,
+.automation-stack--growth .automation-satellites {
+  align-items: flex-end;
+}
+
+.automation-satellites::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  left: 12%;
+  right: 12%;
+  bottom: 0;
+  height: 2px;
+  background: var(--color-border);
+}
+
+.automation-stack--cloud .automation-satellites::before,
+.automation-stack--growth .automation-satellites::before {
+  top: 0;
+  bottom: auto;
+}
+
+.automation-satellite {
+  position: relative;
+  display: grid;
+  width: 40px;
+  height: 40px;
+  flex: none;
+  place-items: center;
+  border: 2px solid var(--color-border);
+  border-radius: 50%;
+  background: var(--color-surface);
+  color: var(--color-heading);
+  box-shadow: 0 5px 12px var(--color-shadow-soft);
+  transition: border-color 0.22s ease, box-shadow 0.22s ease;
+}
+
+.automation-satellite.is-source {
+  border-color: var(--color-accent);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--color-accent) 22%, transparent);
+}
+
+.automation-satellite::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: calc(50% - 1px);
+  width: 2px;
+  height: 10px;
+  background: var(--color-border);
+}
+
+.automation-stack--cloud .automation-satellite::after,
+.automation-stack--growth .automation-satellite::after {
+  top: auto;
+  bottom: 100%;
+}
+
+.automation-satellite svg {
+  width: 24px;
+  height: 24px;
+}
+
+.automation-stack-stem {
+  width: 2px;
+  height: 11px;
+  background: var(--color-border);
+}
+
+.automation-node,
+.automation-core {
+  display: flex;
+  box-shadow: 0 14px 34px var(--color-shadow-card);
+}
+
+.automation-node {
+  width: 72%;
+  min-height: 82px;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 15px;
+  border: 1px solid var(--color-border);
+  border-radius: 15px;
+  background: var(--color-surface);
+  color: var(--color-text);
+  transition: border-color 0.22s ease, box-shadow 0.22s ease;
+}
+
+.automation-node.is-energized {
+  border-color: var(--color-accent);
+  box-shadow:
+    0 0 0 3px color-mix(in srgb, var(--color-accent) 30%, transparent),
+    0 0 26px color-mix(in srgb, var(--color-accent) 42%, transparent);
+}
+
+.automation-node-copy {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  text-align: center;
+}
+
+.automation-node-copy strong {
+  font-family: var(--font-family-heading);
+  font-size: clamp(16px, 1.75vw, 20px);
+  line-height: 1.1;
+}
+
+.automation-node-copy small {
+  color: var(--color-muted-text);
+  font-size: clamp(11px, 1vw, 13px);
+  line-height: 1.2;
+}
+
+.automation-core {
+  position: absolute;
+  z-index: 3;
+  inset: 35% 27%;
+  flex-direction: column;
+  justify-content: center;
+  padding: 18px 22px;
+  border: 1px solid var(--color-primary-hover);
+  border-radius: 20px;
+  background: var(--color-primary);
+  color: var(--color-white);
+  transition: box-shadow 0.22s ease;
+  box-shadow:
+    0 22px 50px color-mix(in srgb, var(--color-primary) 27%, transparent),
+    inset 0 1px 0 color-mix(in srgb, var(--color-white) 24%, transparent);
+}
+
+.automation-core.is-receiving {
+  box-shadow:
+    0 0 0 4px color-mix(in srgb, var(--color-white) 35%, transparent),
+    0 0 32px color-mix(in srgb, var(--color-primary) 55%, transparent);
+}
+
+.automation-core-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+
+.automation-core-logo {
+  width: 40px;
+  height: 30px;
+  object-fit: contain;
+  padding: 3px;
+  border-radius: 5px;
+  background: var(--color-white);
+}
+
+.automation-core-bars {
+  display: flex;
+  align-items: end;
+  gap: 3px;
+  height: 18px;
+}
+
+.automation-core-bars i {
+  width: 3px;
+  height: 7px;
+  border-radius: 2px;
+  background: var(--color-white);
+  opacity: 0.8;
+  animation: automationBars 0.9s ease-in-out infinite alternate;
+}
+
+.automation-core-bars i:nth-child(2) { animation-delay: -0.35s; }
+.automation-core-bars i:nth-child(3) { animation-delay: -0.65s; }
+
+.automation-core > strong {
+  font-family: var(--font-family-heading);
+  font-size: clamp(16px, 2vw, 25px);
+  line-height: 1.06;
+  letter-spacing: -0.04em;
+}
+
+.automation-core-status {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 10px;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+}
+
+.automation-core-status i {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #ffffff;
+  box-shadow: 0 0 7px #ffffff;
+  animation: automationBlink 1.6s ease-in-out infinite;
+}
+
+@keyframes automationBreathe {
+  50% { transform: scale(1.08); opacity: 0.6; }
+}
+
+@keyframes automationBars {
+  to { height: 17px; }
+}
+
+@keyframes automationBlink {
+  50% { opacity: 0.3; }
+}
+
+@media (max-width: 900px) {
+  .automation-node-copy strong { font-size: clamp(16px, 2.2vw, 20px); }
+  .automation-node-copy small { font-size: clamp(11px, 1.5vw, 13px); }
+  .automation-core > strong { font-size: clamp(17px, 3vw, 25px); }
+}
+
+@media (max-width: 600px) {
+  .automation-diagram { width: min(100%, 370px); aspect-ratio: 1; }
+  .automation-stack { width: 44%; }
+  .automation-satellites { height: 36px; }
+  .automation-satellite::after { height: 9px; }
+  .automation-satellite {
+    width: clamp(23px, 7vw, 28px);
+    height: clamp(23px, 7vw, 28px);
+  }
+  .automation-satellite svg { width: 17px; height: 17px; }
+  .automation-stack-stem { height: 5px; }
+  .automation-node {
+    width: 74%;
+    min-height: 58px;
+    padding: 6px 8px;
+    border-radius: 11px;
+  }
+  .automation-node-copy strong { font-size: clamp(15px, 4.5vw, 17px); }
+  .automation-node-copy small { font-size: clamp(10px, 3vw, 11px); }
+  .automation-core { padding: 9px 12px; border-radius: 14px; }
+  .automation-core.is-receiving {
+  box-shadow:
+    0 0 0 4px color-mix(in srgb, var(--color-white) 35%, transparent),
+    0 0 32px color-mix(in srgb, var(--color-primary) 55%, transparent);
+}
+
+.automation-core-top { margin-bottom: 5px; }
+  .automation-core-logo { width: 30px; height: 23px; }
+  .automation-core > strong { font-size: clamp(14px, 4vw, 17px); }
+  .automation-core-status { margin-top: 6px; font-size: 8px; }
+}
+
+@media (max-width: 380px) {
+  .automation-node { padding: 5px 7px; }
+  .automation-satellite svg { width: 14px; height: 14px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .automation-halo,
+  .automation-core-bars i,
+  .automation-core-status i {
+    animation: none;
+  }
+}

@@ -5,7 +5,8 @@ import SectionEyebrow from "./SectionEyebrow";
 import SiteContainer from "./SiteContainer";
 import "./Contact.css";
 
-function Contact() {
+function Contact({ headingLevel = 2 }) {
+  const Heading = headingLevel === 1 ? "h1" : "h2";
   return (
     <section className="contact-section" id="contact" aria-labelledby="contact-heading">
       <GraphBackground />
@@ -13,7 +14,7 @@ function Contact() {
       <SiteContainer className="contact-inner">
         <div className="contact-intro">
           <SectionEyebrow className="contact-eyebrow">LET&apos;S TALK</SectionEyebrow>
-          <h2 id="contact-heading">Tell us what you have in mind.</h2>
+          <Heading id="contact-heading">Tell us what you have in mind.</Heading>
           <p>
             A quick note is enough to get started. Share your idea, challenge,
             or the project you want to bring to life.

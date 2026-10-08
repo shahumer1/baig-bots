@@ -22,7 +22,7 @@ function Footer() {
 
         <div className="footer-bottom">
           <small>© {new Date().getFullYear()} Baig Bots. All rights reserved.</small>
-          <a href="#home">Back to top ↑</a>
+          <a href="#top">Back to top ↑</a>
         </div>
       </SiteContainer>
     </footer>

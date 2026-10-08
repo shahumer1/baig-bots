@@ -5,14 +5,15 @@ import "./Navbar.css";
 
 function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const currentPage = new URLSearchParams(window.location.search).get("page") || "home";
 
   return (
     <nav className="navbar" aria-label="Main navigation">
       <Brand />
       <ul id="primary-navigation" className={`nav-links${menuOpen ? " open" : ""}`}>
-        {navigationLinks.map(({ label, href }) => (
+        {navigationLinks.map(({ label, href, page }) => (
           <li key={href}>
-            <a href={href} onClick={() => setMenuOpen(false)}>
+            <a href={href} aria-current={currentPage === page ? "page" : undefined} onClick={() => setMenuOpen(false)}>
               {label}
             </a>
           </li>

@@ -6,33 +6,29 @@ import "./FAQ.css";
 
 const questions = [
   {
-    question: "What does Baig Bots build?",
-    answer:
-      "We build custom websites, web apps, automation workflows, and AI tools around real business needs.",
+    question: "How does a new project begin?",
+    answer: "We start with a conversation about your goals, audience, and challenges. From there we shape a scope, timeline, and practical next steps.",
   },
   {
-    question: "How does a project get started?",
-    answer:
-      "Start by sharing your idea, the challenge you want to solve, and the outcome you have in mind. From there, we can shape a practical scope.",
+    question: "How is a project priced?",
+    answer: "Pricing depends on the work involved, the features needed, and the level of ongoing support. We discuss the scope before preparing a tailored proposal.",
   },
   {
-    question: "Can you improve an existing website or workflow?",
-    answer:
-      "Yes. Existing products and processes can be reviewed for useful improvements, integrations, or automation opportunities.",
+    question: "Can you handle design and development together?",
+    answer: "Yes. We can connect user experience, visual design, and development so the finished product feels consistent and works as intended.",
   },
   {
-    question: "Do you offer AI and automation solutions?",
-    answer:
-      "Yes. We create tools and workflows that help reduce repetitive work and make everyday processes more efficient.",
+    question: "Can a solution grow with my business?",
+    answer: "We consider future content, features, integrations, and performance when planning the foundation. The right approach depends on your roadmap.",
   },
   {
-    question: "How long does a project take?",
-    answer:
-      "It depends on the features, integrations, and complexity involved. A clearer timeline comes after the project scope is defined.",
+    question: "Do you support projects after launch?",
+    answer: "Ongoing updates, monitoring, and improvements can be planned around the needs of the product and the team that runs it.",
   },
 ];
 
-function FAQ() {
+function FAQ({ headingLevel = 2 }) {
+  const Heading = headingLevel === 1 ? "h1" : "h2";
   return (
     <section className="faq-section" id="faq" aria-labelledby="faq-heading">
       <GraphBackground />
@@ -41,7 +37,7 @@ function FAQ() {
       <SiteContainer className="faq-inner">
         <div className="faq-intro">
           <SectionEyebrow className="faq-eyebrow">GOOD TO KNOW</SectionEyebrow>
-          <h2 id="faq-heading">Frequently asked questions.</h2>
+          <Heading id="faq-heading">Frequently asked questions.</Heading>
           <p>Quick answers to help you understand how we work.</p>
         </div>
 
