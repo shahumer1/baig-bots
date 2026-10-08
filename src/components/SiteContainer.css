@@ -1,0 +1,5 @@
+.site-container {
+  position: relative;
+  width: min(100%, 1250px);
+  margin-inline: auto;
+}

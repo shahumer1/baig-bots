@@ -1,0 +1,7 @@
+.section-eyebrow {
+  display: block;
+  color: var(--color-heading);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 4px;
+}

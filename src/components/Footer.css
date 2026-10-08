@@ -1,12 +1,7 @@
 .site-footer {
+  padding: 70px 6% 30px;
   background: var(--color-footer);
   color: var(--color-white);
-  padding: 70px 6% 30px;
-}
-
-.footer-inner {
-  width: min(100%, 1250px);
-  margin: 0 auto;
 }
 
 .footer-main {
@@ -14,29 +9,6 @@
   justify-content: space-between;
   gap: 40px;
   padding-bottom: 70px;
-}
-
-.footer-brand {
-  display: inline-flex;
-  align-items: center;
-  gap: 14px;
-  margin-bottom: 14px;
-  font-size: 31px;
-  font-weight: 800;
-  letter-spacing: -1.5px;
-  text-decoration: none;
-}
-
-.footer-logo {
-  display: block;
-  width: 76px;
-  height: 62px;
-  object-fit: contain;
-  mix-blend-mode: screen;
-}
-
-.footer-brand-dot {
-  color: color-mix(in srgb, var(--color-primary-hover) 72%, var(--color-white));
 }
 
 .footer-main p {
@@ -63,7 +35,7 @@
 
 .footer-links a:hover,
 .footer-bottom a:hover {
-  color: var(--color-border);
+  color: var(--color-cream);
 }
 
 .footer-bottom {
@@ -76,7 +48,7 @@
 }
 
 .footer-bottom small {
-  color: color-mix(in srgb, var(--color-white) 58%, transparent);
+  color: color-mix(in srgb, var(--color-white) 68%, transparent);
   font-size: 13px;
 }
 

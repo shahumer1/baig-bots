@@ -37,24 +37,6 @@
 
 /* GRID */
 
-.hero-grid {
-  position: absolute;
-
-  inset: 0;
-
-  background-image:
-    linear-gradient(
-      var(--color-grid) 1px,
-      transparent 1px
-    ),
-    linear-gradient(
-      90deg,
-      var(--color-grid) 1px,
-      transparent 1px
-    );
-
-  background-size: 52px 52px;
-}
 
 
 /* LEFT CIRCUITS */
@@ -247,7 +229,7 @@
 .hero-title span {
   display: inline-block;
 
-  color: var(--color-primary);
+  color: var(--color-heading);
 
   transition:
     transform 0.3s ease,
@@ -282,7 +264,7 @@
 
 
 .hero-description strong {
-  color: var(--color-primary);
+  color: var(--color-accent);
 
   font-weight: 700;
 }
@@ -412,9 +394,9 @@
 
 
 .hero-btn-secondary:hover {
-  color: var(--color-primary);
+  color: var(--color-accent);
 
-  border-color: var(--color-primary);
+  border-color: var(--color-accent);
 
   transform: translateY(-4px);
 
@@ -488,7 +470,7 @@
 
 
 .hero-stat:hover h2 {
-  color: var(--color-primary);
+  color: var(--color-accent);
 
   transform: scale(1.06);
 }
@@ -535,6 +517,11 @@
     margin: 0 auto 12px;
   }
 
+  .hero-visual img {
+    width: 100%;
+    margin-left: 0;
+  }
+
   .hero-description {
     margin: 0 auto 33px;
   }
@@ -574,7 +561,7 @@
   }
 
   .hero-title {
-    font-size: 48px;
+    font-size: clamp(38px, 10vw, 48px);
 
     letter-spacing: -2px;
 

@@ -1,6 +1,9 @@
 import { useState } from "react";
 import ArrowUpRight from "./ArrowUpRight";
 import CircuitDots from "./CircuitDots";
+import GraphBackground from "./GraphBackground";
+import SectionEyebrow from "./SectionEyebrow";
+import SiteContainer from "./SiteContainer";
 import "./Services.css";
 
 function Services() {
@@ -35,12 +38,12 @@ function Services() {
 
   return (
     <section className="services-section" id="services">
-      <div className="services-bg-grid"></div>
+      <GraphBackground />
       <CircuitDots />
 
-      <div className="services-container">
+      <SiteContainer className="services-container">
         <div className="services-heading">
-          <span>WHAT WE DO</span>
+          <SectionEyebrow>WHAT WE DO</SectionEyebrow>
 
           <h2>
             Services Built for
@@ -114,7 +117,7 @@ function Services() {
             );
           })}
         </div>
-      </div>
+      </SiteContainer>
     </section>
   );
 }

@@ -13,38 +13,10 @@
 
 /* background grid */
 
-.services-bg-grid {
-  position: absolute;
-
-  inset: 0;
-
-  pointer-events: none;
-
-  background-image:
-    linear-gradient(
-      var(--color-grid) 1px,
-      transparent 1px
-    ),
-    linear-gradient(
-      90deg,
-      var(--color-grid) 1px,
-      transparent 1px
-    );
-
-  background-size: 52px 52px;
-}
 
 
 .services-container {
-  position: relative;
-
   z-index: 2;
-
-  width: 100%;
-
-  max-width: 1250px;
-
-  margin: 0 auto;
 }
 
 
@@ -58,24 +30,14 @@
   margin-bottom: 65px;
 }
 
-.services-heading > span {
-  display: block;
-
+.services-heading .section-eyebrow {
   margin-bottom: 12px;
-
-  color: var(--color-primary);
-
-  font-size: 12px;
-
-  font-weight: 700;
-
-  letter-spacing: 4px;
 }
 
 .services-heading h2 {
   margin: 0 0 22px;
 
-  color: var(--color-primary);
+  color: var(--color-heading);
 
   font-size: clamp(42px, 5vw, 68px);
 
@@ -87,7 +49,7 @@
 }
 
 .services-heading h2 strong {
-  color: var(--color-primary);
+  color: var(--color-heading);
 }
 
 .services-heading p {
@@ -127,7 +89,7 @@
   min-width: 0;
   border: 1px solid var(--color-border);
   border-radius: 22px;
-  background: var(--color-white);
+  background: var(--color-surface);
   box-shadow: 0 14px 40px var(--color-shadow-light);
   perspective: 1200px;
   transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
@@ -136,7 +98,7 @@
 @media (hover: hover) {
   .service-card:hover {
     transform: translateY(-8px);
-    border-color: color-mix(in srgb, var(--color-primary) 35%, var(--color-border));
+    border-color: color-mix(in srgb, var(--color-accent) 35%, var(--color-border));
     box-shadow: 0 25px 55px var(--color-shadow-card);
   }
 }
@@ -180,7 +142,7 @@
   height: 240px;
   top: -155px;
   left: -94px;
-  border: 2px solid color-mix(in srgb, var(--color-primary) 22%, transparent);
+  border: 2px solid color-mix(in srgb, var(--color-accent) 22%, transparent);
 }
 
 .service-card-face::after {
@@ -188,7 +150,7 @@
   height: 210px;
   right: -100px;
   bottom: -105px;
-  border: 2px solid color-mix(in srgb, var(--color-primary) 18%, transparent);
+  border: 2px solid color-mix(in srgb, var(--color-accent) 18%, transparent);
 }
 
 .service-card-face > * {
@@ -197,7 +159,7 @@
 }
 
 .service-card-front {
-  background: var(--color-white);
+  background: var(--color-surface);
 }
 
 .service-card-back {
@@ -232,9 +194,9 @@
   align-items: center;
   justify-content: center;
   border-radius: 16px;
-  background: color-mix(in srgb, var(--color-primary) 7%, transparent);
-  border: 1px solid color-mix(in srgb, var(--color-primary) 14%, transparent);
-  color: var(--color-primary);
+  background: color-mix(in srgb, var(--color-accent) 7%, transparent);
+  border: 1px solid color-mix(in srgb, var(--color-accent) 14%, transparent);
+  color: var(--color-accent);
   font-size: 21px;
   font-weight: 800;
 }
@@ -317,7 +279,7 @@
 }
 
 .service-card-arrow {
-  color: var(--color-primary);
+  color: var(--color-accent);
   transition: transform 0.3s ease;
 }
 
@@ -381,7 +343,7 @@
   }
 
   .services-heading h2 {
-    font-size: 42px;
+    font-size: clamp(35px, 10vw, 42px);
   }
 
   .services-heading p {

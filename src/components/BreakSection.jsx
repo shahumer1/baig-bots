@@ -1,12 +1,14 @@
 import "./BreakSection.css";
 import CircuitDots from "./CircuitDots";
+import SectionEyebrow from "./SectionEyebrow";
+import SiteContainer from "./SiteContainer";
 
 function BreakSection() {
   return (
     <section className="break-section" aria-labelledby="break-heading">
       <CircuitDots dark />
-      <div className="break-section-inner">
-        <span className="break-eyebrow">FROM IDEA TO IMPACT</span>
+      <SiteContainer className="break-section-inner">
+        <SectionEyebrow className="break-eyebrow">FROM IDEA TO IMPACT</SectionEyebrow>
         <h2 id="break-heading">
           Make room for <span>what comes next.</span>
         </h2>
@@ -14,7 +16,7 @@ function BreakSection() {
           The best ideas deserve space to grow. Let&apos;s turn yours into
           something people can use.
         </p>
-      </div>
+      </SiteContainer>
     </section>
   );
 }

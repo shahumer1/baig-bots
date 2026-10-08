@@ -1,6 +1,6 @@
 .circuit-dots {
   --circuit-path-color: color-mix(in srgb, var(--color-circuit) 82%, transparent);
-  --dot-color: var(--color-primary);
+  --dot-color: var(--color-accent);
   position: absolute;
   inset: 0;
   z-index: 0;

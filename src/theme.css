@@ -1,26 +1,35 @@
-/* Site-wide design settings: change this file to update the palette or font. */
+/* Site-wide design tokens. Edit this file to change fonts or colors. */
 :root {
-  --font-family-base: Arial, Helvetica, sans-serif;
+  color-scheme: light;
 
-  /* Main palette */
+  --font-family-base: Arial, Helvetica, sans-serif;
+  --font-family-heading: "Space Grotesk", var(--font-family-base);
+
   --color-white: #ffffff;
+  --color-cream: #fff4e8;
   --color-background: #ffffff;
   --color-background-alternate: #f3f3f3;
+  --color-surface: #ffffff;
   --color-navbar: #191919;
   --color-footer: #1d2223;
   --color-primary: #701018;
   --color-primary-hover: #803033;
+  --color-accent: var(--color-primary);
+  --color-heading: var(--color-primary);
+  --color-on-cream: #191919;
   --color-text: #191919;
   --color-border: #cecccc;
+  --color-input-background: #ffffff;
+  --color-input-text: #191919;
+  --color-input-placeholder: #5e5e5e;
 
-  /* Original hero/parallax dot timing */
   --dot-speed-horizontal: 5s;
   --dot-speed-vertical: 4.5s;
   --dot-speed-long: 5.5s;
+  --dot-color: var(--color-accent);
 
-  /* Supporting colors derived from the palette above */
-  --color-muted-text: color-mix(in srgb, var(--color-text) 64%, var(--color-white));
-  --color-surface-translucent: color-mix(in srgb, var(--color-white) 92%, transparent);
+  --color-muted-text: color-mix(in srgb, var(--color-text) 64%, var(--color-background));
+  --color-surface-translucent: color-mix(in srgb, var(--color-surface) 92%, transparent);
   --color-white-shine: color-mix(in srgb, var(--color-white) 35%, transparent);
   --color-menu-hover: color-mix(in srgb, var(--color-white) 8%, transparent);
   --color-grid: color-mix(in srgb, var(--color-border) 52%, transparent);
@@ -30,4 +39,21 @@
   --color-shadow-card: rgb(0 0 0 / 0.09);
   --color-shadow-nav: rgb(0 0 0 / 0.18);
   --color-shadow-menu: rgb(0 0 0 / 0.2);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    color-scheme: dark;
+    --color-background: #15191a;
+    --color-background-alternate: #202627;
+    --color-surface: #293031;
+    --color-text: #f5f1ee;
+    --color-accent: #e9adb3;
+    --color-heading: var(--color-cream);
+    --color-border: #5f696b;
+    --color-grid: color-mix(in srgb, var(--color-border) 35%, transparent);
+    --color-shadow-light: rgb(0 0 0 / 0.22);
+    --color-shadow-soft: rgb(0 0 0 / 0.26);
+    --color-shadow-card: rgb(0 0 0 / 0.3);
+  }
 }

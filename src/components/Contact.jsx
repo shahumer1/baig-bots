@@ -1,14 +1,18 @@
 import ArrowUpRight from "./ArrowUpRight";
 import CircuitDots from "./CircuitDots";
+import GraphBackground from "./GraphBackground";
+import SectionEyebrow from "./SectionEyebrow";
+import SiteContainer from "./SiteContainer";
 import "./Contact.css";
 
 function Contact() {
   return (
     <section className="contact-section" id="contact" aria-labelledby="contact-heading">
+      <GraphBackground />
       <CircuitDots />
-      <div className="contact-inner">
+      <SiteContainer className="contact-inner">
         <div className="contact-intro">
-          <span className="contact-eyebrow">LET&apos;S TALK</span>
+          <SectionEyebrow className="contact-eyebrow">LET&apos;S TALK</SectionEyebrow>
           <h2 id="contact-heading">Tell us what you have in mind.</h2>
           <p>
             A quick note is enough to get started. Share your idea, challenge,
@@ -22,6 +26,15 @@ function Contact() {
           aria-label="Contact form"
           onSubmit={(event) => event.preventDefault()}
         >
+          <svg
+            className="contact-form-shape"
+            viewBox="0 0 1000 850"
+            preserveAspectRatio="none"
+            aria-hidden="true"
+            focusable="false"
+          >
+            <path d="M105 55 C155 25 195 22 245 48 S325 12 402 39 S480 8 560 38 S650 14 730 39 S815 14 885 55 S970 70 954 145 S968 220 949 300 S980 400 950 485 S980 570 945 650 S960 730 914 790 S850 828 790 815 S700 844 635 812 S540 842 475 815 S380 844 315 813 S225 837 160 808 S65 810 55 755 S28 680 48 610 S22 530 50 455 S20 370 51 300 S35 210 60 145 S50 80 105 55 Z" />
+          </svg>
           <div className="contact-form-grid">
             <label className="contact-field">
               <span>Your name</span>
@@ -51,7 +64,7 @@ function Contact() {
             </button>
           </div>
         </form>
-      </div>
+      </SiteContainer>
     </section>
   );
 }

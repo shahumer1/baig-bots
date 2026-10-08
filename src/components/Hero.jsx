@@ -1,6 +1,7 @@
 import "./Hero.css";
 import HeroParallax from "./HeroParallax";
 import ArrowUpRight from "./ArrowUpRight";
+import GraphBackground from "./GraphBackground";
 import heroImage from "../assets/H1.png";
 
 function Hero() {
@@ -8,7 +9,7 @@ function Hero() {
     <>
       <section className="hero" id="home">
         <div className="hero-background">
-          <div className="hero-grid"></div>
+          <GraphBackground />
 
           <div className="hero-circuits">
             <span className="hero-line hero-line-1"></span>
