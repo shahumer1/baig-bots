@@ -28,6 +28,7 @@
   --color-input-text: #191919;
   --color-input-placeholder: #5e5e5e;
 
+  --automation-flow-cycle: 8s;
   --dot-speed-horizontal: 5s;
   --dot-speed-vertical: 4.5s;
   --dot-speed-long: 5.5s;

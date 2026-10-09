@@ -131,16 +131,16 @@
   z-index: 2;
 
   width: 100%;
-  max-width: 1300px;
+  max-width: 1440px;
   display: grid;
-  grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
   grid-template-areas:
     "title visual"
     "description visual"
     "buttons visual"
     "stats visual";
   align-items: center;
-  column-gap: clamp(24px, 4vw, 64px);
+  column-gap: clamp(24px, 2.5vw, 40px);
 
   text-align: left;
 }
@@ -503,7 +503,7 @@
   }
 
   .hero-visual {
-    width: min(100%, 490px);
+    width: min(100%, 650px);
     margin: 0 auto 12px;
   }
 
