@@ -31,12 +31,14 @@ src/
     Section/, PageLayout/, PageHeader/
     ContentPage/           # Shared service/company page template
     ContentSection/, FeatureGrid/, InfoCard/, Process/, RelatedPages/
-    ServiceCard/          # Reusable flip card
+    ServiceCard/          # Reusable service card and expanding action
+    ServiceDetails/       # Shared accessible service details dialog
     ContactSection/, FormField/
     FAQSection/, Accordion/, ContactFAQ/
     GraphBackground/, CircuitDots/, TechnologySlider/
     SiteContainer/, SectionEyebrow/, ArrowUpRight/
-  content/                # Page copy, service data, navigation links
+  hooks/                  # Shared behavior, including service detail dialogs
+  content/                # Page copy, service data, industry mappings, navigation links
   assets/                 # Local images/fonts
   theme.css               # Shared palette, fonts and theme tokens
 ```
@@ -50,6 +52,10 @@ service/company entries use one `ContentPage` template with data from
 
 - Colors, typography and theme settings: `src/theme.css`.
 - Written page content: `src/content/siteContent.js`.
+- Home service offerings: `src/content/homeServices.js`.
+- Industry selections and relevant solutions: `src/content/industries.js`.
+- Auto-moving capability columns: `src/pages/Home/ExpertiseWall/`, using the shared `VerticalMarquee` and `InfoCard` components.
+- Industry layout: `src/pages/Home/Industries/`; it reuses `ServiceCard` and `ServiceDetails`.
 - Navigation: `src/content/navigationLinks.js`.
 - Page registrations: `src/pages/routes.js` (URLs use `?page=...`).
 - Shared button behavior/styles: `src/components/Button/`.

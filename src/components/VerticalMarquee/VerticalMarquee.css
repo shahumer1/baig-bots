@@ -1,0 +1,15 @@
+.vertical-marquee {
+  min-width: 0;
+  height: var(--marquee-height, 320px);
+  overflow: hidden;
+  scrollbar-width: none;
+  cursor: grab;
+  user-select: none;
+  touch-action: pan-x;
+  mask-image: linear-gradient(to bottom, transparent, #000 9%, #000 91%, transparent);
+}
+.vertical-marquee[data-dragging="true"] { cursor: grabbing; }
+.vertical-marquee:focus-visible { outline: 2px solid var(--color-primary-hover); outline-offset: -2px; border-radius: 14px; }
+.vertical-marquee::-webkit-scrollbar { display: none; }
+.vertical-marquee-track { will-change: transform; }
+.vertical-marquee-group { display: grid; gap: 14px; padding-bottom: 14px; }

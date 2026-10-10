@@ -16,36 +16,6 @@ export const serviceGroups = [
   },
 ];
 
-export const homeServices = [
-  {
-    number: "01",
-    title: "Web Development",
-    text: "Websites, stores, and digital products shaped around how your business works.",
-    icon: "</>",
-    details: "From platform selection and UX to launch and iteration, we build experiences that are straightforward to use and ready to grow.",
-    highlights: ["Custom websites", "Online stores", "Web applications"],
-    page: "web-development",
-  },
-  {
-    number: "02",
-    title: "AI & Automation",
-    text: "Assistants and connected workflows that make routine work easier.",
-    icon: "AI",
-    details: "We explore where AI and automation can help, then design practical systems that fit your existing processes.",
-    highlights: ["Chatbots", "Voice agents", "Workflow automation"],
-    page: "ai",
-  },
-  {
-    number: "03",
-    title: "Brand & Growth",
-    text: "Design and marketing that help people understand and remember your business.",
-    icon: "✦",
-    details: "A consistent visual identity and a clear growth plan give every customer touchpoint a stronger purpose.",
-    highlights: ["Brand design", "SEO", "Digital marketing"],
-    page: "graphic-design",
-  },
-];
-
 export const pageContent = {
   about: {
     kicker: "ABOUT BAIG BOTS",

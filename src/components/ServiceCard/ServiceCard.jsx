@@ -1,27 +1,39 @@
+import { useId } from "react";
+import {
+  LuBrainCircuit, LuWorkflow, LuCodeXml, LuNetwork, LuCreditCard,
+  LuChartNoAxesCombined, LuCloud, LuHeadset, LuMonitorSmartphone,
+  LuDatabase, LuPanelsTopLeft, LuPalette, LuMegaphone, LuVideo,
+  LuSparkles, LuUsers,
+} from "react-icons/lu";
 import Button from "../Button/Button";
-import InfoCard from "../InfoCard/InfoCard";
+import PixelCircuitIcon from "../PixelCircuitIcon/PixelCircuitIcon";
 import "./ServiceCard.css";
 
-export default function ServiceCard({ service, isFlipped, onFlipChange }) {
+const icons = {
+  brain: LuBrainCircuit, workflow: LuWorkflow, code: LuCodeXml,
+  network: LuNetwork, credit: LuCreditCard, chart: LuChartNoAxesCombined,
+  cloud: LuCloud, support: LuHeadset, web: LuMonitorSmartphone,
+  database: LuDatabase, design: LuPanelsTopLeft, palette: LuPalette,
+  marketing: LuMegaphone, video: LuVideo, sparkles: LuSparkles, team: LuUsers,
+};
+
+export default function ServiceCard({ service, onExplore, variant = "default" }) {
+  const Icon = icons[service.icon];
+  const titleId = useId();
   return (
-    <article className={`service-card${isFlipped ? " is-flipped" : ""}`}
-      onMouseEnter={() => { if (window.matchMedia("(hover: hover)").matches) onFlipChange(true); }}
-      onMouseLeave={() => onFlipChange(false)}>
-      <div className="service-card-inner">
-        <div className="service-card-face service-card-front" aria-hidden={isFlipped}>
-          <div className="service-card-top"><span className="service-number">{service.number}</span><div className="service-icon" aria-hidden="true">{service.icon}</div></div>
-          <InfoCard as="div" className="service-card-content" title={service.title} text={service.text} />
-        </div>
-        <InfoCard as="div" className="service-card-face service-card-back" id={`service-details-${service.number}`} aria-hidden={!isFlipped}
-          kickerClassName="service-card-eyebrow" kicker={`HOW WE HELP · ${service.number}`} title={service.title} text={service.details}>
-          <ul>{service.highlights.map((highlight) => <li key={highlight}>{highlight}</li>)}</ul>
-        </InfoCard>
+    <article className={`service-card${variant === "industry" ? " service-card--industry" : ""}`} aria-labelledby={titleId}>
+      <span className="service-card-category">{service.category}</span>
+      <div className="service-card-title">
+        <span className="service-card-icon"><Icon aria-hidden="true" /></span>
+        <h3 id={titleId}>{service.title}</h3>
       </div>
-      <Button variant="plain" className="service-card-toggle" arrow arrowClassName="service-card-arrow"
-        aria-label={`${isFlipped ? "Show front of" : "Show details for"} ${service.title}`}
-        aria-expanded={isFlipped} aria-controls={`service-details-${service.number}`} onClick={() => onFlipChange(!isFlipped)}>
-        {isFlipped ? "Show front" : "Explore service"}
-      </Button>
+      <p>{service.text}</p>
+      <div className="service-card-actions">
+        <Button variant="reveal" onClick={() => onExplore(service)} aria-label={`More about ${service.title}`} aria-haspopup="dialog">
+          <span className="button-reveal-icon"><PixelCircuitIcon /></span>
+          <span className="button-reveal-label" aria-hidden="true">More</span>
+        </Button>
+      </div>
     </article>
   );
 }

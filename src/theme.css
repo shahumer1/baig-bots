@@ -17,6 +17,22 @@
   --color-technology-slider-muted: #c9c1bb;
   --color-technology-slider-border: #66605d;
   --color-technology-slider-hover: #332b2a;
+  --color-services-panel: var(--color-navbar);
+  --color-services-panel-text: var(--color-cream);
+  --color-services-heading: var(--color-cream);
+  --color-services-text: var(--color-cream);
+  --color-services-muted: color-mix(in srgb, var(--color-cream) 73%, var(--color-navbar));
+  --color-services-border: color-mix(in srgb, var(--color-border) 20%, var(--color-navbar));
+  --color-services-card: color-mix(in srgb, var(--color-primary) 5%, var(--color-navbar));
+  --color-industries-panel: var(--color-white);
+  --color-industries-card: var(--color-white);
+  --color-industries-text: var(--color-on-cream);
+  --color-industries-heading: var(--color-primary);
+  --color-industries-muted: color-mix(in srgb, var(--color-on-cream) 65%, var(--color-cream));
+  --color-industries-border: color-mix(in srgb, var(--color-primary) 8%, #cecccc);
+  --color-industries-shadow: rgb(0 0 0 / 0.045);
+  --color-industries-glow: color-mix(in srgb, var(--color-primary) 18%, transparent);
+  --color-services-glow: color-mix(in srgb, var(--color-primary) 70%, transparent);
   --color-primary: #701018;
   --color-primary-hover: #803033;
   --color-accent: var(--color-primary);
@@ -28,6 +44,8 @@
   --color-input-text: #191919;
   --color-input-placeholder: #5e5e5e;
 
+  --color-expertise-panel: var(--color-background-alternate);
+  --expertise-flow-duration: 65s;
   --automation-flow-cycle: 8s;
   --dot-speed-horizontal: 5s;
   --dot-speed-vertical: 4.5s;
@@ -51,6 +69,17 @@
   :root {
     color-scheme: dark;
     --color-background: #15191a;
+    --color-expertise-panel: var(--color-navbar);
+    --color-industries-panel: var(--color-navbar);
+    --color-industries-card: #293031;
+    --color-industries-text: #f5f1ee;
+    --color-industries-heading: var(--color-cream);
+    --color-industries-muted: #b7babc;
+    --color-industries-border: #5f696b;
+    --color-industries-shadow: rgb(0 0 0 / 0.22);
+    --color-services-panel: var(--color-cream);
+    --color-services-panel-text: var(--color-on-cream);
+    --color-services-heading: var(--color-primary);
     --color-technology-slider-background: #fff4e8;
     --color-technology-slider-text: #191919;
     --color-technology-slider-muted: #655e59;
