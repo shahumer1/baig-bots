@@ -8,13 +8,11 @@
   box-sizing: border-box;
 }
 
-
 html {
   width: 100%;
 
   scroll-behavior: smooth;
 }
-
 
 body {
   width: 100%;
@@ -31,7 +29,6 @@ body {
 
   color: var(--color-text);
 }
-
 
 h1,
 h2,
@@ -50,11 +47,9 @@ select {
   font-family: inherit;
 }
 
-
 img {
   max-width: 100%;
 }
-
 
 a {
   color: inherit;

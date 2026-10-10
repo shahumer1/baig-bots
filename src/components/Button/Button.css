@@ -1,0 +1,47 @@
+.button {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  min-width: 168px;
+  min-height: 52px;
+  padding: 15px 24px;
+  border: 1px solid var(--color-primary);
+  border-radius: 11px;
+  background: var(--color-primary);
+  color: var(--color-white);
+  font: inherit;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1.2;
+  text-decoration: none;
+  cursor: pointer;
+  overflow: hidden;
+  transition: transform 0.3s ease, background-color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+.button__arrow { width: 16px; height: 16px; flex: none; transition: transform 0.3s ease; }
+.button--primary { box-shadow: 0 9px 24px color-mix(in srgb, var(--color-primary) 18%, transparent); }
+.button--primary::before {
+  content: ""; position: absolute; inset: 0; left: -110%; width: 100%;
+  background: linear-gradient(115deg, transparent, var(--color-white-shine), transparent);
+  transition: left 0.55s ease;
+}
+.button:not(:disabled):hover { transform: translateY(-4px); }
+.button:not(:disabled):hover .button__arrow { transform: translate(2px, -2px); }
+.button--primary:hover { background: var(--color-primary-hover); border-color: var(--color-primary-hover); }
+.button--primary:hover::before { left: 110%; }
+.button--secondary { color: var(--color-text); background: var(--color-surface-translucent); border-color: var(--color-border); }
+.button--secondary:hover { color: var(--color-accent); border-color: var(--color-accent); box-shadow: 0 10px 22px var(--color-shadow-soft); }
+.button--light { background: var(--color-white); color: var(--color-primary); border: 0; border-radius: 13px; padding: 0 21px; }
+.button:disabled { opacity: 0.78; cursor: not-allowed; }
+.button--plain { min-width: 0; min-height: 0; padding: 0; border: 0; border-radius: 0; background: transparent; color: var(--color-text); }
+.button--plain:not(:disabled):hover { transform: none; }
+.button--icon {
+  width: 34px; min-width: 34px; min-height: 34px; height: 34px; padding: 0; border-radius: 50%;
+  border-color: var(--button-border, var(--color-border)); background: transparent;
+  color: var(--button-text, var(--color-text)); font-size: 27px; line-height: 1;
+}
+.button--icon:not(:disabled):hover { background: var(--button-hover, var(--color-background-alternate)); transform: translateY(-2px); }
+.button:focus-visible { outline: 2px solid var(--color-primary-hover); outline-offset: 4px; }
+@media (prefers-reduced-motion: reduce) { .button, .button::before, .button__arrow { transition: none; } }

@@ -1,16 +1,60 @@
-# React + Vite
+# Baig Bots
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+React + Vite website with browser light/dark theme support and a Three.js hero.
 
-Currently, two official plugins are available:
+## Development
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+```sh
+npm install
+npm run dev
+npm run build
+npm run lint
+```
 
-## React Compiler
+## Source structure
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+```text
+src/
+  pages/
+    Home/                 # Home entry and its specific sections/3D scene
+    Services/             # Services directory
+    Contact/              # Contact page
+    FAQ/                  # FAQ page
+    About/, Portfolio/    # Company pages
+    AI/, Chatbots/, ...   # Separate service page folders
+    NotFound/             # Unknown route fallback
+    routes.js             # Query parameter route registry
+  components/
+    Button/               # All button variants and CTA links
+    NavigationLinks/      # Navbar/footer link rendering
+    Navbar/, Footer/, Brand/
+    Section/, PageLayout/, PageHeader/
+    ContentPage/           # Shared service/company page template
+    ContentSection/, FeatureGrid/, InfoCard/, Process/, RelatedPages/
+    ServiceCard/          # Reusable flip card
+    ContactSection/, FormField/
+    FAQSection/, Accordion/, ContactFAQ/
+    GraphBackground/, CircuitDots/, TechnologySlider/
+    SiteContainer/, SectionEyebrow/, ArrowUpRight/
+  content/                # Page copy, service data, navigation links
+  assets/                 # Local images/fonts
+  theme.css               # Shared palette, fonts and theme tokens
+```
 
-## Expanding the ESLint configuration
+Every page has its own entry folder. Reusable components live directly under
+`components`, without a `common` subfolder. Page entries compose shared UI;
+service/company entries use one `ContentPage` template with data from
+`content/siteContent.js`.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Editing
+
+- Colors, typography and theme settings: `src/theme.css`.
+- Written page content: `src/content/siteContent.js`.
+- Navigation: `src/content/navigationLinks.js`.
+- Page registrations: `src/pages/routes.js` (URLs use `?page=...`).
+- Shared button behavior/styles: `src/components/Button/`.
+- Home tunnel geometry and motion: `src/pages/Home/AutomationDiagram/`.
+
+Contact is currently UI-only; the send button stays disabled until submission
+is connected. The technology slider repeats its data for seamless scrolling;
+its item rendering is defined once.
